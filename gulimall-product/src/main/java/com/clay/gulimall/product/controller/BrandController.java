@@ -5,6 +5,7 @@ import com.clay.gulimall.common.utils.R;
 import com.clay.gulimall.product.entity.BrandEntity;
 import com.clay.gulimall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -50,7 +51,7 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@Validated(BrandEntity.AddGroup.class) @RequestBody BrandEntity brand){
 		brandService.save(brand);
 
         return R.ok();
@@ -60,8 +61,8 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody BrandEntity brand){
-		brandService.updateById(brand);
+    public R update(@Validated(BrandEntity.UpdateGroup.class)@RequestBody BrandEntity brand){
+		brandService.updateDetail(brand);
 
         return R.ok();
     }

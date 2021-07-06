@@ -6,15 +6,15 @@
         <groupId>com.clay.gulimall</groupId>
         <artifactId>gulimall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>jar</packaging>
     <artifactId>gulimall-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gulimall-common</name>
     <description>谷粒商城-公共服务</description>
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
+
     </properties>
     <dependencies>
         <dependency>
@@ -38,14 +38,8 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 
 </project>

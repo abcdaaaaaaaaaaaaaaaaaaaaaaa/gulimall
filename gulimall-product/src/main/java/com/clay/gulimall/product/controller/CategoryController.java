@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,6 +25,18 @@ import java.util.Map;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+
+    /**
+     * 树形列表
+     */
+    @RequestMapping("/list/tree")
+    public R list(){
+    List<CategoryEntity> entityties=categoryService.listWithTree();
+
+        return R.ok().put("data", entityties);
+    }
+
 
     /**
      * 列表
@@ -61,7 +74,7 @@ public class CategoryController {
      */
     @RequestMapping("/update")
     public R update(@RequestBody CategoryEntity category){
-		categoryService.updateById(category);
+		categoryService.updateDetail(category);
 
         return R.ok();
     }
@@ -71,7 +84,8 @@ public class CategoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
+
+        categoryService.removeMenusByIds(Arrays.asList(catIds));
 
         return R.ok();
     }

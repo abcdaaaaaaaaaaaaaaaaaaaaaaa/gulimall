@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: gulimall-third-party
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: third-party
+        extension-configs:
+          - dataId: third-party.yml
+            group: DEFAULT_GROUP
+            refresh: true
+    alicloud:
+      access-key: LTAI5tCDUV3iVAePv32sZgKB
+      secret-key: ckceYndDy95fsL2fPxQneMdJXzHvK4
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: clay-gulimall
+#    配置文件暂时不写到config 未配置config持久化

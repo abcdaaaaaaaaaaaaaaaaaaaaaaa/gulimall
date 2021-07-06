@@ -6,7 +6,7 @@
         <groupId>com.clay.gulimall</groupId>
         <artifactId>gulimall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+
     </parent>
 
     <artifactId>gulimall-ware</artifactId>
@@ -15,12 +15,15 @@
     <description>谷粒商城-订单服务</description>
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.clay.gulimall</groupId>
+            <artifactId>gulimall-common</artifactId>
         </dependency>
 
         <dependency>

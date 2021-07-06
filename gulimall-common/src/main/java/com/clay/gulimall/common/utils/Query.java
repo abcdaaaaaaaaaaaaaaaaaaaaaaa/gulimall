@@ -23,6 +23,10 @@ import java.util.Map;
  */
 public class Query<T> {
 
+    public static<T> IPage<T> page(Map<String, Object> params,Class<T> t){
+        return new Query<T>().getPage(params);
+    }
+
     public IPage<T> getPage(Map<String, Object> params) {
         return this.getPage(params, null, false);
     }
